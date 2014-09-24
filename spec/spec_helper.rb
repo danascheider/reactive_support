@@ -11,5 +11,5 @@ SimpleCov.start if ENV["COVERAGE"]
 require_relative '../lib/reactive_support'
 
 RSpec.configure do |c|
-  c.order = 'random'
+  c.order  = 'random'
 end
