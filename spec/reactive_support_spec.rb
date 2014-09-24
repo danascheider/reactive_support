@@ -47,7 +47,7 @@ describe ReactiveSupport do
 
     context 'nonsensical args' do 
       it 'returns nil' do 
-        expect(%w(foo, bar, baz).join([:foo, :bar, :baz])). to eql nil
+        expect(%w(foo, bar, baz).try(:join, [:foo, :bar, :baz])). to eql nil
       end
     end
   end
