@@ -7,6 +7,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter
 ]
 SimpleCov.start if ENV["COVERAGE"]
+Coveralls.wear!
 
 require_relative '../lib/reactive_support'
 
