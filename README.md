@@ -1,5 +1,5 @@
 ## ReactiveSupport
-The ReactiveSupport gem provides a re-implementation of certain ActiveSupport
+The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](https://github.com/rails/activesupport)
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
 be used in any kind of project and is not dependent on the To add
 ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
@@ -73,5 +73,9 @@ requests. Here are some guidelines to get started:
   * Keep ReactiveSupport principles - stability, simplicity, and transparency - in mind.
     Ideally, contributions should uphold these principles while expanding or 
     enhancing functionality.
+
+### Resources
+  * The [Rails guides](http://guides.rubyonrails.org/active_support_core_extensions.html) on
+    ActiveRecord give information about each of ReactiveSupport's methods.
 
 \* I would not recommend using it in conjunction with ActiveSupport, though.
