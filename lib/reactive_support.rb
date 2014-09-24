@@ -12,9 +12,14 @@
 module ReactiveSupport
 
   # The +#try+ method calls the given +method+ (with given +*args+ and +&block+)
-  # on the object calling it, returning the output of the method or, if an error is
-  # raised, +nil+. It accepts an arbitrary number of arguments and an
-  # optional block, enabling it to be used with any method.
+  # on the object calling it. The +#try+ method returns the output of the 
+  # method or, if an error is raised, +nil+. It accepts an arbitrary number 
+  # of arguments and an optional block, enabling it to be used with any method.
+  #
+  # The given +method+ is the name of the method to be called, given as a symbol.
+  # +*args+ refers to all the arguments (if any) that should be passed into that
+  # method. Likewise, the +&block+ parameter will be passed on to the method
+  # being called.
   #
   # Examples of a method being called without args:
   #     'foo'.try(:upcase)           # => 'FOO'
