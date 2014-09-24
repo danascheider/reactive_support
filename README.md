@@ -25,19 +25,16 @@ differences. (This is true of ReactiveSupport 0.1.0 and ActiveSupport 4.1.6.)
 ### FAQ
 ##### Why not just use ActiveSupport?
 There are three main reasons why you might prefer ReactiveSupport over ActiveSupport:
-  1. Stability
-     ReactiveSupport is intended to work independently of Rails' rapidly changing 
+  1. Stability: ReactiveSupport is intended to work independently of Rails' rapidly changing 
      ecosystem. ReactiveSupport methods are guaranteed not to be transferred to other
      Rails modules or refactored out. While ActiveSupport may be used independently of
      Rails, its developers are still primarily focused on its place within Rails.
      ReactiveSupport solves that problem.
-  2. Simplicity
-     ReactiveSupport can be added to other projects without additional abstraction
+  2. Simplicity: ReactiveSupport can be added to other projects without additional abstraction
      layers, and it has no dependencies outside the development and test groups. You
      don't have to worry about configuration, compatibility with other gems*, or
      conflicting dependencies.
-  3. Transparency
-     Rails is an enormous gem, and gets larger and more complex with each major version.
+  3. Transparency: Rails is an enormous gem, and gets larger and more complex with each major version.
      It is also opinionated, facilitating some development approaches while making
      others inordinately difficult. ReactiveSupport is not large or complicated. Any
      developer can read the documentation, or even the code itself, and know exactly what
