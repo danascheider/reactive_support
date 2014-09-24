@@ -40,6 +40,8 @@ There are three main reasons why you might prefer ReactiveSupport over ActiveSup
      developer can read the documentation, or even the code itself, and know exactly what
      he or she is dealing with.
 
+\* I would not recommend using it in conjunction with ActiveSupport, though.
+
 ##### This doesn't have very many methods. What gives?
 ReactiveSupport is a spinoff from my other project, [Canto](https://github.com/danascheider/canto).
 Consequently, the methods it includes are primarily those that I have found a use for 
@@ -77,5 +79,3 @@ requests. Here are some guidelines to get started:
 ### Resources
   * The [Rails guides](http://guides.rubyonrails.org/active_support_core_extensions.html) on
     ActiveRecord give information about each of ReactiveSupport's methods.
-
-\* I would not recommend using it in conjunction with ActiveSupport, though.
