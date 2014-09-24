@@ -1,7 +1,7 @@
 module ReactiveSupport
-  def try(method, *args)
+  def try(method, *args, &block)
     begin
-      self.send(method, *args)
+      block_given? ? self.send(method, *args, &block) : self.send(method, *args)
     rescue NoMethodError, Sequel::ValidationFailed, Sequel::HookFailed, Sequel::Error
       nil
     end

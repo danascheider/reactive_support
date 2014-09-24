@@ -4,6 +4,7 @@ PATH
     sinatra-sequel_extension (0.1.0)
 
 GEM
+  remote: https://rubygems.org/
   specs:
     coveralls (0.7.1)
       multi_json (~> 1.3)
