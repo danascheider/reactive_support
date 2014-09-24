@@ -1,8 +1,8 @@
 ## ReactiveSupport
 The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](https://github.com/rails/activesupport)
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
-be used in any kind of project and is not dependent on the To add
-ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
+be used in any kind of project and is not dependent on any frameworks, gemsets, etc.
+To add ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
 <pre><code>gem 'reactive_record', '~> 0.1.0', git: 'https://github.com/danascheider/reactive_record'</code></pre>
 To install locally:
 <pre><code>sudo gem install reactive_record</code></pre>
