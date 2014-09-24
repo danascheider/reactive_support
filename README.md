@@ -1,4 +1,4 @@
-## ReactiveSupport
+## ReactiveSupport [![Build Status](https://travis-ci.org/danascheider/reactive_support.svg?branch=master)](https://travis-ci.org/danascheider/reactive_support)
 The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](https://github.com/rails/activesupport)
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
 be used in any kind of project and is not dependent on any frameworks, gemsets, etc.
