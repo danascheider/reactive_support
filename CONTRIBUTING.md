@@ -154,7 +154,7 @@ Lots of things can be reduced to a single line, especially blocks and conditiona
     begin
       return message = foo.message
     rescue 
-      STDOUT.puts "It didn't work"
+      "It didn't work"
     end
 
     # Needs to be written like this:
