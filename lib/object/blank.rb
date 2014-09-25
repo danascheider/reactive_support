@@ -2,6 +2,11 @@
 # The +#blank?+ method returns +true+ if the object is undefined, blank, false,
 # empty, or nil. The +#present?+ method returns the opposite of +#blank?+
 
+# Ruby's core String class. See documentation for version 
+# 2.1.3[http://ruby-doc.org/core-2.1.3/String.html],
+# 2.0.0[http://ruby-doc.org/core-2.1.3/String.html], or 
+# 1.9.3[http://ruby-doc.org/core-2.0.0/String.html].
+
 class String
 
   # When called on a string, the +#blank?+ method returns +true+ if the string
