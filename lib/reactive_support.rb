@@ -1,4 +1,5 @@
 require_relative 'object/blank.rb'
+require_relative 'object/duplicable.rb'
 
 # The ReactiveSupport module implements methods from ActiveSupport. It can be
 # included in Ruby's +Object+ class by adding +require 'reactive_support'+ to
@@ -12,6 +13,15 @@ require_relative 'object/blank.rb'
 #     arr.try(:join, '.') 
 
 module ReactiveSupport
+
+  # The +#duplicable?+ method checks whether an object may be safely duplicated.
+  # It returns true, unless the object calling it has its own method called 
+  # +#duplicable?+. The +#duplicable?+ method is defined for non-duplicable
+  # classes in +./object/duplicable.rb+.
+  
+  def duplicable?
+    true
+  end
 
   # The +#try+ method calls the given +method+ (with given +*args+ and +&block+)
   # on the object calling it. The +#try+ method returns the output of the 
