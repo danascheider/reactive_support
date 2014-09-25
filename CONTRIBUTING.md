@@ -132,25 +132,25 @@ as it solves a problem not solved within the ReactiveSupport module itself.
 Lots of things can be reduced to a single line, especially blocks and conditionals.
 Be creative!
 <code><pre># This:
-  array.map do |num|
-    puts "#{num} is now #{num + 1}"
-    num += 1
-  end
-  # Should be turned into this:
-  array.map {|item| puts "#{item} is now #{item += 1}" }
-  # And this: 
-  if foo.defined?
-    puts "It's defined!"
-  else 
-    puts "It's not defined!"
-  end
-  # Should look more like this:
-  puts foo.defined? ? "It's defined!" : "It's not defined!"
-  # And finally, this: 
-  begin
-    return message = foo.message
-  rescue 
-    STDOUT.puts "It didn't work"
-  end
-  # Needs to be written like this:
-  return foo.message rescue "It didn\'t work!"</code></pre>
+array.map do |num|
+  puts "#{num} is now #{num + 1}"
+  num += 1
+end
+# Should be turned into this:
+array.map {|item| puts "#{item} is now #{item += 1}" }
+# And this: 
+if foo.defined?
+  puts "It's defined!"
+else 
+  puts "It's not defined!"
+end
+# Should look more like this:
+puts foo.defined? ? "It's defined!" : "It's not defined!"
+# And finally, this: 
+begin
+  return message = foo.message
+rescue 
+  STDOUT.puts "It didn't work"
+end
+# Needs to be written like this:
+return foo.message rescue "It didn\'t work!"</code></pre>
