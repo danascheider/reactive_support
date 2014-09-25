@@ -108,14 +108,14 @@ Development of ReactiveSupport is guided by best practices. This is a simple
 gem and it should be DRY, concise, and thoroughly documented.
 Here are some of the best practices and stylistic guidelines I like my projects
 to adhere to:
-  * +unless+ is preferred to +if+...+not+
+  * `unless` is preferred to `if not`
   * Single-line blocks use curly braces
-  * Multi-line blocks use +do+...+end+ syntax
+  * Multi-line blocks use `do`...`end` syntax
   * Single quotes are preferred to double quotes when there's a choice
   * Fewer lines good, more lines bad (see below for examples)
   * More files are better than large files*
-  * RSpec +describe+ and +context+ blocks are good
-  * RSpec +let+ syntax is good
+  * RSpec `describe` and `context` blocks are good
+  * RSpec `let` syntax is good
   * RSpec examples should have a single point of failure
 
 And here are some smells to avoid (may be OK in some cases):
