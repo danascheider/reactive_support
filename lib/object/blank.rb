@@ -162,6 +162,11 @@ class FalseClass
   end
 end
 
+# Ruby's core Numeric class, the parent class of Integer, Fixnum, Bignum, Float,
+# and Rational. See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/Numeric.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/Numeric.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/Numeric.html].
+
 class Numeric 
 
   # Numbers can never be blank; when called on any +Numeric+ (including +Fixnum+,
