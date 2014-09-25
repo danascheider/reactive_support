@@ -17,6 +17,11 @@ end
 
 require 'bigdecimal'
 
+# BigDecimal class from Ruby's standard library. See documentation for version
+# 2.1.3[http://www.ruby-doc.org/stdlib-2.1.3/libdoc/bigdecimal/rdoc/BigDecimal.html],
+# 2.0.0[http://ruby-doc.org/stdlib-2.0.0/libdoc/bigdecimal/rdoc/BigDecimal.html], or
+# 1.9.3[http://www.ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html].
+
 class BigDecimal
   begin
     !!BigDecimal.new('4.56').dup
