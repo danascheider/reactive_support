@@ -58,6 +58,11 @@ contributions should not be taken to mean it has fallen off my radar.
 Yes. ReactiveSupport is agnostic to the characteristics of your app, and there is no
 reason it cannot be used in any app where you feel it is needed.
 
+##### What versions of Ruby are supported?
+ReactiveSupport version 0.1.0 supports Ruby versions >= 1.9.3. Additional Rubies
+may be supported in the future. Adding such support would be a welcome contribution
+to the project.
+
 ### Contributing
 Contributions are welcome and I will respond promptly to all issue reports and pull
 requests. Here are some guidelines to get started:
