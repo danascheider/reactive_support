@@ -55,43 +55,115 @@ describe ReactiveSupport do
   describe '#blank? method' do 
     context 'empty string' do 
       it 'returns true' do 
-        expect(''.blank?).to eql true
+        expect(''.blank?).to be true
       end
     end
 
     context 'whitespace string' do 
       it 'returns true' do 
-        expect('  '.blank?).to eql true
+        expect('  '.blank?).to be true
       end
     end
 
     context 'FalseClass' do 
       it 'returns true' do 
-        expect(false.blank?).to eql true
+        expect(false.blank?).to be true
       end
     end
 
     context 'nil' do 
       it 'returns true' do 
-        expect(nil.blank?).to eql true
+        expect(nil.blank?).to be true
       end
     end
 
     context 'empty array' do 
       it 'returns true' do 
-        expect([].blank?).to eql true
+        expect([].blank?).to be true
       end
     end
 
     context 'empty hash' do 
       it 'returns true' do 
-        expect({}.blank?).to eql true 
+        expect({}.blank?).to be true 
       end
     end
 
     context 'non-blank object' do 
       it 'returns false' do 
-        expect('foo'.blank?).to eql false
+        expect('foo'.blank?).to be false
+      end
+    end
+
+    context 'TrueClass' do 
+      it 'returns false' do 
+        expect(true.blank?).to be false 
+      end
+    end
+
+    context 'enumerable with blank members' do 
+      it 'returns false' do 
+        expect([nil, false].blank?).to be false
+      end
+    end
+  end
+
+  describe '#present? method' do 
+    context 'when absent' do 
+      context 'empty string' do 
+        it 'returns false' do 
+          expect(''.present?).to be false
+        end
+      end
+
+      context 'whitespace string' do 
+        it 'returns false' do 
+          expect('  '.present?).to be false
+        end
+      end
+
+      context 'FalseClass' do 
+        it 'returns false' do 
+          expect(false.present?).to be false
+        end
+      end
+
+      context 'NilClass' do 
+        it 'returns false' do 
+          expect(nil.present?).to be false
+        end
+      end
+
+      context 'empty array' do 
+        it 'returns false' do 
+          expect([].present?).to be false 
+        end
+      end
+
+      context 'empty hash' do 
+        it 'returns false' do 
+          expect({}.present?).to be false 
+        end
+      end
+    end
+
+    context 'when present' do 
+      context 'non-empty object' do 
+        it 'returns true' do 
+          expect(['foo'].present?).to be true 
+        end
+      end
+
+      context 'TrueClass' do 
+        it 'returns true' do 
+          expect(true.present?).to be true 
+        end
+      end
+
+      context 'enumerable with blank members' do 
+        it 'returns true' do 
+          expect([false, nil, ''].present?).to be true 
+        end
       end
     end
   end
