@@ -11,10 +11,6 @@
   end
 end
 
-# This is required for compatibility with Ruby 1.9.x. In Ruby 1.9.x, 
-# +dup+ is not allowed on a BigDecimal and raises a TypeError. Rescue
-# the type error to simply return false
-
 require 'bigdecimal'
 
 # BigDecimal class from Ruby's standard library. See documentation for version
@@ -23,9 +19,12 @@ require 'bigdecimal'
 # 1.9.3[http://www.ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html].
 
 class BigDecimal
-  begin
-    !!BigDecimal.new('4.56').dup
-  rescue TypeError
-    # use superclass implementation
+
+  # This is required for compatibility with Ruby 1.9.x. In Ruby 1.9.x, 
+  # +dup+ is not allowed on a BigDecimal and raises a TypeError. Rescue
+  # the type error to simply return false.
+
+  def duplicable?
+    !!self.dup rescue super
   end
 end

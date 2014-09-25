@@ -100,6 +100,12 @@ describe ReactiveSupport do
       end
     end
 
+    context 'BigDecimal' do 
+      it 'returns true' do 
+        expect(BigDecimal.new('4.56').duplicable?).to be true
+      end
+    end
+
     context 'when true' do 
       it 'returns true' do 
         expect(['foo', 'bar', 'baz'].duplicable?).to be true
