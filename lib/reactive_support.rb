@@ -1,3 +1,5 @@
+require_relative 'object/blank'
+
 # The ReactiveSupport module implements methods from ActiveSupport. It can be
 # included in Ruby's +Object+ class by adding +require 'reactive_support'+ to
 # your project file. Then, ReactiveSupport methods can be called on any Ruby

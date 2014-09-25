@@ -51,4 +51,48 @@ describe ReactiveSupport do
       end
     end
   end
+
+  describe '#blank? method' do 
+    context 'empty string' do 
+      it 'returns true' do 
+        expect(''.blank?).to eql true
+      end
+    end
+
+    context 'whitespace string' do 
+      it 'returns true' do 
+        expect('  '.blank?).to eql true
+      end
+    end
+
+    context 'FalseClass' do 
+      it 'returns true' do 
+        expect(false.blank?).to eql true
+      end
+    end
+
+    context 'nil' do 
+      it 'returns true' do 
+        expect(nil.blank?).to eql true
+      end
+    end
+
+    context 'empty array' do 
+      it 'returns true' do 
+        expect([].blank?).to eql true
+      end
+    end
+
+    context 'empty hash' do 
+      it 'returns true' do 
+        expect({}.blank?).to eql true 
+      end
+    end
+
+    context 'non-blank object' do 
+      it 'returns false' do 
+        expect('foo'.blank?).to eql false
+      end
+    end
+  end
 end
