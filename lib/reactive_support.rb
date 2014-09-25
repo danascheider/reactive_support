@@ -1,5 +1,6 @@
 require_relative 'object/blank.rb'
 require_relative 'object/duplicable.rb'
+require_relative 'object/deep_dup.rb'
 
 # The ReactiveSupport module implements methods from ActiveSupport. It can be
 # included in Ruby's +Object+ class by adding +require 'reactive_support'+ to
@@ -14,11 +15,15 @@ require_relative 'object/duplicable.rb'
 
 module ReactiveSupport
 
+  def deep_dup
+    duplicable? ? self.dup : self
+  end
+
   # The +#duplicable?+ method checks whether an object may be safely duplicated.
   # It returns true, unless the object calling it has its own method called 
   # +#duplicable?+. The +#duplicable?+ method is defined for non-duplicable
   # classes in +./object/duplicable.rb+.
-  
+
   def duplicable?
     true
   end

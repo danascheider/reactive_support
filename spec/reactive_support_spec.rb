@@ -64,7 +64,35 @@ describe ReactiveSupport do
   end
 
   describe '#deep_dup method' do 
-    #
+    context 'duplicable object' do 
+      before(:each) do 
+        @str = 'foo'
+      end
+
+      it 'returns a duplicate' do 
+        expect(@str.deep_dup).not_to be @str
+      end
+
+      it 'does not affect the original' do 
+        @str.deep_dup.instance_variable_set(:@a, 1)
+        expect(@string.instance_variable_get(:@a)).to eql nil
+      end
+    end
+
+    context 'non-duplicable object' do 
+      it 'returns itself' do 
+        num = 10
+        expect(num.deep_dup).to be num
+      end
+    end
+
+    context 'array' do 
+      it 'does not affect the original' do 
+        arr = [ [1, 2], 3 ]
+        arr.deep_dup[0][1] = 4
+        expect(arr[0][1]).to eql 2
+      end
+    end
   end
 
   describe '#duplicable? method' do 
