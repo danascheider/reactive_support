@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.specification_version = 1 if s.respond_to? :specification_version=
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
 
-  s.name = 'sinatra-sequel_extension'
+  s.name = 'reactive_support'
   s.version = ReactiveSupport.gem_version
   s.date = '2014-09-24'
 
@@ -18,9 +18,13 @@ Gem::Specification.new do |s|
   s.files = %w[
     Gemfile
     LICENSE
+    CONTRIBUTING.md
     README.md
     version.rb
     lib/reactive_support.rb
+    lib/object/blank.rb 
+    lib/object/deep_dup.rb 
+    lib/object/duplicable.rb
     reactive_support.gemspec
     spec/reactive_support_spec.rb
     spec/spec_helper.rb
