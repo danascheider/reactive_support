@@ -102,7 +102,8 @@ describe ReactiveSupport do
 
     context 'BigDecimal' do 
       it 'returns true' do 
-        expect(BigDecimal.new('4.56').duplicable?).to be true
+        result = (RUBY_VERSION =~ /^1\.9/) ? false : true
+        expect(BigDecimal.new('4.56').duplicable?).to be result
       end
     end
 
