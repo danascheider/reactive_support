@@ -65,7 +65,8 @@ to the project.
 
 ### Contributing
 Contributions are welcome and I will respond promptly to all issue reports and pull
-requests. Here are some guidelines to get started:
+requests. Here are some guidelines to get started; I also encourage you to read the 
+full CONTRIBUTING.md file to ensure your pull request will be accepted as is:
   * Include passing RSpec tests with your pull request. I aim for 100% test coverage.
   * Run the whole test suite before you make your PR. Make sure your changes don't
     break the rest of the gem.
