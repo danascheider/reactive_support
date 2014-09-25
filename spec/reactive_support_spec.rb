@@ -63,7 +63,11 @@ describe ReactiveSupport do
     end
   end
 
-  describe '#duplicable?' do 
+  describe '#deep_dup method' do 
+    #
+  end
+
+  describe '#duplicable? method' do 
     context 'NilClass' do 
       it 'returns false' do 
         expect(nil.duplicable?).to be false

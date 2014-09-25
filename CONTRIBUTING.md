@@ -25,6 +25,7 @@ DO...
     (I don't bite!)
 
 DON'T...
+  * Worry that your pull request is too small - all improvements are welcome
   * Break backward compatibility
   * Modify existing functionality (unless required to fix a bug)
   * Add dependencies
