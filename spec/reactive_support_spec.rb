@@ -154,6 +154,20 @@ describe ReactiveSupport do
     end
   end
 
+  describe '#exists? method' do 
+    context 'existent object' do 
+      it 'returns true' do 
+        expect({foo: :bar}.exists?).to be true
+      end
+    end
+
+    context 'nil' do 
+      it 'returns false' do 
+        expect(nil.exists?).to be false
+      end
+    end
+  end
+
   describe '#present? method' do 
     context 'when absent' do 
       context 'empty string' do 

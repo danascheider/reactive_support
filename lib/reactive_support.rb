@@ -28,6 +28,18 @@ module ReactiveSupport
     true
   end
 
+  # The +#exists?+ method and its alias, +#exist?+, return +true+ if the object
+  # calling the method is not +nil+.
+  #
+  #     'foobar'.exists?      # => true 
+  #     nil.exists?           # => false
+
+  def exists?
+    !self.nil?
+  end
+
+  alias_method :exist?, :exists?
+
   # The +#try+ method calls the given +method+ (with given +*args+ and +&block+)
   # on the object calling it. The +#try+ method returns the output of the 
   # method or, if an error is raised, +nil+. It accepts an arbitrary number 
