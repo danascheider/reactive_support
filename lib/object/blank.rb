@@ -34,6 +34,7 @@ end
 # 2.1.3[http://ruby-doc.org/core-2.1.3/FalseClass.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/FalseClass.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/FalseClass.html].
+
 class Array
 
   # When called on an array, the +#blank?+ method is aliased to +#empty?+ 
@@ -56,6 +57,11 @@ class Array
     !blank?
   end
 end
+
+# Ruby's core Hash class. See documentation for version 
+# 2.1.3[http://ruby-doc.org/core-2.1.3/Hash.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/Hash.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/Hash.html].
 
 class Hash
 
