@@ -84,6 +84,11 @@ class Hash
   end
 end
 
+# Ruby's core NilClass (the class to which +nil+ belongs). See documentation 
+# for version 2.1.3[http://ruby-doc.org/core-2.1.3/NilClass.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/NilClass.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/NilClass.html].
+
 class NilClass
 
   # +nil+ is considered blank by definition; if +#blank?+ is called on +nil+,
