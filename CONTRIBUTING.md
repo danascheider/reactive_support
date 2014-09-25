@@ -136,8 +136,10 @@ array.map do |num|
   puts "#{num} is now #{num + 1}"
   num += 1
 end
+
 \# Should be turned into this:
 array.map {|item| puts "#{item} is now #{item += 1}" }
+
 \# And this: 
 if foo.defined?
   puts "It's defined!"
