@@ -84,8 +84,8 @@ class Hash
   end
 end
 
-# Ruby's core NilClass (the class to which +nil+ belongs). See documentation 
-# for version 2.1.3[http://ruby-doc.org/core-2.1.3/NilClass.html],
+# Ruby's core NilClass (the singleton class consisting of the +nil+ object). 
+# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/NilClass.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/NilClass.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/NilClass.html].
 
@@ -114,6 +114,11 @@ class NilClass
   end
 end
 
+# Ruby's core TrueClass (the singleton class consisting of the +true+ object).
+# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/TrueClass.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/TrueClass.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/TrueClass.html].
+
 class TrueClass
 
   # +true+ is not blank by definition; when called on +true+, the +#blank?+
@@ -132,6 +137,11 @@ class TrueClass
     true 
   end
 end
+
+# Ruby's core FalseClass (the singleton class consisting of the +false+ object).
+# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/FalseClass.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/FalseClass.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/FalseClass.html].
 
 class FalseClass
 
