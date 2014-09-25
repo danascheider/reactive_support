@@ -93,6 +93,14 @@ describe ReactiveSupport do
         expect(arr[0][1]).to eql 2
       end
     end
+
+    context 'hash' do 
+      it 'does not affect the original' do 
+        h = { foo: { bar: 1 } }
+        h.deep_dup[:foo][:bar] = 10
+        expect(h[:foo][:bar]).to eql 1
+      end
+    end
   end
 
   describe '#duplicable? method' do 
