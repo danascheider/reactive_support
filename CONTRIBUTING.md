@@ -158,4 +158,4 @@ Lots of things can be reduced to a single line, especially blocks and conditiona
     end
 
     # Needs to be written like this:
-    return foo.message rescue "It didn\'t work!"</code></pre>
+    return foo.message rescue "It didn\'t work!"
