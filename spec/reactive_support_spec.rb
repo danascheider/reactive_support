@@ -106,6 +106,12 @@ describe ReactiveSupport do
         expect([nil, false].blank?).to be false
       end
     end
+
+    context 'numeric' do 
+      it 'returns false' do 
+        expect(10.blank?).to be false 
+      end
+    end
   end
 
   describe '#present? method' do 
@@ -163,6 +169,12 @@ describe ReactiveSupport do
       context 'enumerable with blank members' do 
         it 'returns true' do 
           expect([false, nil, ''].present?).to be true 
+        end
+      end
+
+      context 'Numeric' do 
+        it 'returns true' do 
+          expect(10.present?).to be true
         end
       end
     end
