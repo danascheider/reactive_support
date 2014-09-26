@@ -2,50 +2,29 @@ require 'spec_helper'
 
 describe ReactiveSupport do 
   describe '#blank? method' do 
-    context 'empty string' do 
-      it 'returns true' do 
-        expect(''.blank?).to be true
+    context 'when true' do 
+      hash = {
+        'empty string'      => '',
+        'whitespace string' => '   ',
+        'FalseClass'        => false,
+        'NilClass'          => nil,
+        'empty array'       => [],
+        'empty hash'        => {} 
+      }
+
+      hash.each do |k,v|
+        specify "#{k} returns true" do 
+          expect(v.blank?).to be true 
+        end
       end
     end
 
-    context 'whitespace string' do 
-      it 'returns true' do 
-        expect('  '.blank?).to be true
-      end
-    end
-
-    context 'FalseClass' do 
-      it 'returns true' do 
-        expect(false.blank?).to be true
-      end
-    end
-
-    context 'NilClass' do 
-      it 'returns true' do 
-        expect(nil.blank?).to be true
-      end
-    end
-
-    context 'empty array' do 
-      it 'returns true' do 
-        expect([].blank?).to be true
-      end
-    end
-
-    context 'empty hash' do 
-      it 'returns true' do 
-        expect({}.blank?).to be true 
-      end
-    end
-
-    context 'non-blank object' do 
-      it 'returns false' do 
+    context 'when false' do 
+      specify 'non-blank object returns false' do 
         expect('foo'.blank?).to be false
       end
-    end
 
-    context 'TrueClass' do 
-      it 'returns false' do 
+      specify 'TrueClass returns false' do 
         expect(true.blank?).to be false 
       end
     end
