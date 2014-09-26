@@ -113,7 +113,7 @@ describe ReactiveSupport do
         end
 
         it 'doesn\'t raise an error' do 
-          expect{ dec.duplicable? }.not_to raise_error(TypeError) if RUBY_VERSION =~ /^1\.9/
+          expect{ dec.duplicable? }.not_to raise_error if RUBY_VERSION =~ /^1\.9/
         end
       end
     end
