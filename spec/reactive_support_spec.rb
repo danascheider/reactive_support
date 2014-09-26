@@ -20,7 +20,7 @@ describe ReactiveSupport do
       end
     end
 
-    context 'nil' do 
+    context 'NilClass' do 
       it 'returns true' do 
         expect(nil.blank?).to be true
       end
@@ -141,9 +141,21 @@ describe ReactiveSupport do
     end
 
     context 'BigDecimal' do 
-      it 'returns true' do 
-        result = (RUBY_VERSION =~ /^1\.9/) ? false : true
-        expect(BigDecimal.new('4.56').duplicable?).to be result
+      let(:dec) { BigDecimal.new('4.56') }
+      context 'Ruby version >= 2.0.0' do 
+        it 'returns true' do 
+          expect(dec.duplicable?).to be true unless RUBY_VERSION =~ /^1\.9/
+        end
+      end
+
+      context 'Ruby version 1.9.x' do 
+        it 'returns false' do 
+          expect(dec.duplicable?).to be false if RUBY_VERSION =~ /^1\.9/
+        end
+
+        it 'doesn\'t raise an error' do 
+          expect{ dec.duplicable? }.not_to raise_error(TypeError) if RUBY_VERSION =~ /^1\.9/
+        end
       end
     end
 
