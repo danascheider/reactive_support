@@ -76,39 +76,26 @@ describe ReactiveSupport do
   end
 
   describe '#duplicable? method' do 
-    context 'NilClass' do 
-      it 'returns false' do 
-        expect(nil.duplicable?).to be false
+    context 'when true' do 
+      it 'returns true' do 
+        expect(['foo', 'bar', 'baz'].duplicable?).to be true
       end
     end
 
-    context 'FalseClass' do 
-      it 'returns false' do 
-        expect(false.duplicable?).to be false 
-      end
-    end
+    context 'when false' do 
+      hash = {
+        'NilClass'   => nil,
+        'FalseClass' => false,
+        'TrueClass'  => true,
+        'symbol'     => :symbol,
+        'numeric'    => 10,
+        'method'     => method(:puts)
+      }
 
-    context 'TrueClass' do 
-      it 'returns false' do 
-        expect(true.duplicable?).to be false 
-      end
-    end
-
-    context 'Symbol' do 
-      it 'returns false' do 
-        expect(:foo.duplicable?).to be false
-      end
-    end
-
-    context 'Numeric' do 
-      it 'returns false' do 
-        expect(10.duplicable?).to be false
-      end
-    end
-
-    context 'Method' do 
-      it 'returns false' do 
-        expect(method(:puts).duplicable?).to be false
+      hash.each do |k,v|
+        specify "#{k} returns false" do 
+          expect(v.duplicable?).to be false
+        end
       end
     end
 
@@ -128,12 +115,6 @@ describe ReactiveSupport do
         it 'doesn\'t raise an error' do 
           expect{ dec.duplicable? }.not_to raise_error(TypeError) if RUBY_VERSION =~ /^1\.9/
         end
-      end
-    end
-
-    context 'when true' do 
-      it 'returns true' do 
-        expect(['foo', 'bar', 'baz'].duplicable?).to be true
       end
     end
   end
