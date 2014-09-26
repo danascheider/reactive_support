@@ -3,7 +3,8 @@ rvm:
   - 1.9.3
   - 2.0.0
   - 2.1.2
-  - jruby-head
+  allowed_failures: 
+    - jruby-head
 env: COVERAGE=true
 script: 'bundle exec rspec'
 notifications:
