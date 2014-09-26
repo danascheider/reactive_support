@@ -87,6 +87,6 @@ full CONTRIBUTING.md file to ensure your pull request will be accepted as is:
 ### Resources
   * The [Rails guides](http://guides.rubyonrails.org/active_support_core_extensions.html) on
     ActiveRecord give information about each of ReactiveSupport's methods.
-  * Aspiring contributors are encouraged read up on [Travis CI](http://travis-ci.org),
-    [Coveralls](http://coveralls.io), [CodeClimate](http://codeclimate.com), and 
-    [Inch CI](http://inch-ci.org).
+  * Those interested in contributing to ReactiveSupport are encouraged read up on 
+    [Travis CI](http://travis-ci.org), [Coveralls](http://coveralls.io), 
+    [CodeClimate](http://codeclimate.com), and [Inch CI](http://inch-ci.org).
