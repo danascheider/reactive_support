@@ -148,122 +148,77 @@ describe ReactiveSupport do
   end
 
   describe '#in? method' do 
-    context 'array' do 
-      context 'when the array contains the given object' do 
-        it 'returns true' do 
-          expect('foo'.in? ['foo', 'bar', 'baz']).to be true
-        end
-      end
+    context 'when true' do 
+      hash = { 
+        'array contains calling object'        => ['foo', 'bar', 'baz'],
+        'hash contains the given key'          => { 'foo' => 'bar' },
+        'string contains the given characters' => 'foolish'
+      }
 
-      context 'when the array does not contain the given object' do 
-        it 'returns false' do 
-          expect('foo'.in? ['bar', 'baz']).to be false 
-        end
-      end
-    end
-
-    context 'hash' do 
-      context 'when the hash contains the given key' do 
-        it 'returns true' do 
-          expect(:foo.in?({foo: 'bar'})).to be true 
-        end
-      end
-
-      context 'when the hash does not contain the given key' do 
-        it 'returns false' do 
-          expect('bar'.in?({foo: 'bar'})).to be false 
+      hash.each do |k,v|
+        specify k do 
+          expect('foo'.in? v).to be true 
         end
       end
     end
 
-    context 'string' do 
-      context 'when the string contains the given characters' do 
-        it 'returns true' do 
-          expect('bar'.in? 'foobar').to be true
-        end
-      end
+    context 'when false' do 
+      hash = {
+        'array doesn\'t contain calling object'    => ['bar', 'baz'],
+        'hash doesn\'t contain given key'          => { bar: :baz },
+        'string doesn\'t contain given characters' => 'something else'
+      }
 
-      context 'when the string does not contain the given characters' do 
-        it 'returns false' do 
-          expect('bar'.in? 'raboof').to be false 
+      hash.each do |k,v|
+        specify k do 
+          expect('foo'.in? v).to be false 
         end
       end
     end
 
-    context 'different data types' do 
-      it 'raises TypeError' do 
-        expect{{ foo: 'bar' }.in? 'foobar'}.to raise_error(TypeError)
-      end
-    end
+    context 'error' do 
+      hash = {
+        'incompatible data types' => [{foo: 'bar'}, 'foobar', TypeError],
+        'invalid parameter'       => [10, 1000, ArgumentError]
+      }
 
-    context 'invalid parameter' do 
-      it 'raises an error' do 
-        expect{ '10'.in? 1000 }.to raise_error(ArgumentError)
+      hash.each do |k,v|
+        specify k do 
+          expect{ v[0].in? v[1] }.to raise_error(v[2])
+        end
       end
     end
   end
 
   describe '#present? method' do 
-    context 'when absent' do 
-      context 'empty string' do 
-        it 'returns false' do 
-          expect(''.present?).to be false
-        end
-      end
+    context 'when true' do 
+      hash = {
+        'non-empty object'              => ['foo'],
+        'TrueClass'                     => true, 
+        'enumerable with blank members' => [nil, false],
+        'numeric'                       => 8.2
+      }
 
-      context 'whitespace string' do 
-        it 'returns false' do 
-          expect('  '.present?).to be false
-        end
-      end
-
-      context 'FalseClass' do 
-        it 'returns false' do 
-          expect(false.present?).to be false
-        end
-      end
-
-      context 'NilClass' do 
-        it 'returns false' do 
-          expect(nil.present?).to be false
-        end
-      end
-
-      context 'empty array' do 
-        it 'returns false' do 
-          expect([].present?).to be false 
-        end
-      end
-
-      context 'empty hash' do 
-        it 'returns false' do 
-          expect({}.present?).to be false 
+      hash.each do |k,v|
+        specify k do 
+          expect(v.present?).to be true 
         end
       end
     end
 
-    context 'when present' do 
-      context 'non-empty object' do 
-        it 'returns true' do 
-          expect(['foo'].present?).to be true 
-        end
-      end
+    context 'when false' do 
+      hash = {
+        'empty string'      => '',
+        'whitespace string' => '   ',
+        'FalseClass'        => false,
+        'NilClass'          => nil,
+        'empty array'       => [],
+        'empty hash'        => {}
+      }
 
-      context 'TrueClass' do 
-        it 'returns true' do 
-          expect(true.present?).to be true 
-        end
-      end
-
-      context 'enumerable with blank members' do 
-        it 'returns true' do 
-          expect([false, nil, ''].present?).to be true 
-        end
-      end
-
-      context 'Numeric' do 
-        it 'returns true' do 
-          expect(10.present?).to be true
+      hash.each do |k,v|
+        specify k do 
+          expect(v.present?).to be false 
         end
       end
     end
