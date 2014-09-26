@@ -194,7 +194,7 @@ describe ReactiveSupport do
     end
   end
 
-  describe '#instance_values' do 
+  describe '#instance_values method' do 
     before(:each) do 
       class C
         def initialize(x,y)
@@ -215,6 +215,26 @@ describe ReactiveSupport do
 
     it 'returns variable values' do 
       [['x', 'foo'], ['y','bar']].each {|(var, val)| expect(@c.instance_values[var]). to eql val }
+    end
+  end
+
+  describe '#instance_variable_names method' do 
+    before(:all) do 
+      class C
+        def initialize(x, y)
+          @x, @y = x, y
+        end
+      end
+
+      @c = C.new(1, 2)
+    end
+
+    it 'returns an array' do 
+      expect(@c.instance_variable_names).to be_an Array
+    end
+
+    it 'includes the name of the instance variables' do 
+      ['@x', '@y'].each {|var| expect(@c.instance_variable_names).to include(var) }
     end
   end
 

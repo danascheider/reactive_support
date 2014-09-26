@@ -99,6 +99,24 @@ module ReactiveSupport
     Hash[instance_variables.map {|name| [name[1..-1], instance_variable_get(name) ] }]
   end
 
+  # The +#instance_variable_names+ method returns an array of the names of 
+  # the instance variables defined on the calling object. The names themselves
+  # are returned as strings and, unlike in the +#instance_values+ method, 
+  # include the +'@'+ prefix.
+  #
+  #     class Widget
+  #       def initialize(x,y)
+  #         @x, @y = x, y
+  #       end
+  #     end
+  #
+  #     widget = Widget.new(1, 2)
+  #     widget.instance_variable_names    # => ['@x', '@y']
+
+  def instance_variable_names
+    instance_variables.map {|name| name.to_s }
+  end
+
   # The +#try+ method calls the given +method+ (with given +*args+ and +&block+)
   # on the object calling it. The +#try+ method returns the output of the 
   # method or, if an error is raised, +nil+. It accepts an arbitrary number 
