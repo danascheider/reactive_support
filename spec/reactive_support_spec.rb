@@ -101,19 +101,23 @@ describe ReactiveSupport do
 
     context 'BigDecimal' do 
       let(:dec) { BigDecimal.new('4.56') }
+
+      before(:each) do 
+        @condition = !!(RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /jruby/)
+      end
       context 'Ruby version >= 2.0.0' do 
         it 'returns true' do 
-          expect(dec.duplicable?).to be true unless RUBY_VERSION =~ /^1\.9/
+          expect(dec.duplicable?).to be true unless @condition 
         end
       end
 
       context 'Ruby version 1.9.x' do 
         it 'returns false' do 
-          expect(dec.duplicable?).to be false if RUBY_VERSION =~ /^1\.9/
+          expect(dec.duplicable?).to be false if @condition
         end
 
         it 'doesn\'t raise an error' do 
-          expect{ dec.duplicable? }.not_to raise_error if RUBY_VERSION =~ /^1\.9/
+          expect{ dec.duplicable? }.not_to raise_error if @condition
         end
       end
     end

@@ -1,7 +1,6 @@
 require 'simplecov'
 require 'coveralls'
 require 'rspec'
-require 'java' # for JRuby purposes
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
