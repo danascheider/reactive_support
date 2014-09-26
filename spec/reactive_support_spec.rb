@@ -20,24 +20,17 @@ describe ReactiveSupport do
     end
 
     context 'when false' do 
-      specify 'non-blank object returns false' do 
-        expect('foo'.blank?).to be false
-      end
+      hash = {
+        'non-blank object'              => 'foo',
+        'TrueClass'                     => true,
+        'enumerable with blank members' => [nil, false],
+        'numeric'                       => 10
+      }
 
-      specify 'TrueClass returns false' do 
-        expect(true.blank?).to be false 
-      end
-    end
-
-    context 'enumerable with blank members' do 
-      it 'returns false' do 
-        expect([nil, false].blank?).to be false
-      end
-    end
-
-    context 'numeric' do 
-      it 'returns false' do 
-        expect(10.blank?).to be false 
+      hash.each do |k,v|
+        specify "#{k} returns false" do 
+          expect(v.blank?).to be false
+        end
       end
     end
   end
