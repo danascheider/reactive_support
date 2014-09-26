@@ -1,6 +1,4 @@
-require_relative 'object/blank.rb'
-require_relative 'object/duplicable.rb'
-require_relative 'object/deep_dup.rb'
+Dir['./lib/object/**/*.rb'].each {|f| require f }
 
 # The ReactiveSupport module implements methods from ActiveSupport. It can be
 # included in Ruby's +Object+ class by adding +require 'reactive_support'+ to
