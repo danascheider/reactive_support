@@ -59,7 +59,9 @@ Yes. ReactiveSupport is agnostic to the characteristics of your app, and there i
 reason it cannot be used in any app where you feel it is needed.
 
 ##### What versions of Ruby are supported?
-ReactiveSupport version 0.1.0 supports Ruby versions >= 1.9.3. Additional Rubies
+ReactiveSupport version 0.1.0 supports Ruby versions >= 1.9.3. [Travis-CI](https://travis-ci.org/danascheider/reactive_support) is set up to run tests against the most recent version
+of JRuby as well (currently 1.7.16), but I recommend against relying on this,
+as I don't know JRuby and won't be able to fix it if it breaks. Additional Rubies
 may be supported in the future. Adding such support would be a welcome contribution
 to the project.
 
