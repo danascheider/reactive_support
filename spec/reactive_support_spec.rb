@@ -182,6 +182,62 @@ describe ReactiveSupport do
     end
   end
 
+  describe '#in? method' do 
+    context 'array' do 
+      context 'when the array contains the given object' do 
+        it 'returns true' do 
+          expect('foo'.in? ['foo', 'bar', 'baz']).to be true
+        end
+      end
+
+      context 'when the array does not contain the given object' do 
+        it 'returns false' do 
+          expect('foo'.in? ['bar', 'baz']).to be false 
+        end
+      end
+    end
+
+    context 'hash' do 
+      context 'when the hash contains the given key' do 
+        it 'returns true' do 
+          expect(:foo.in?({foo: 'bar'})).to be true 
+        end
+      end
+
+      context 'when the hash does not contain the given key' do 
+        it 'returns false' do 
+          expect('bar'.in?({foo: 'bar'})).to be false 
+        end
+      end
+    end
+
+    context 'string' do 
+      context 'when the string contains the given characters' do 
+        it 'returns true' do 
+          expect('bar'.in? 'foobar').to be true
+        end
+      end
+
+      context 'when the string does not contain the given characters' do 
+        it 'returns false' do 
+          expect('bar'.in? 'raboof').to be false 
+        end
+      end
+    end
+
+    context 'different data types' do 
+      it 'raises TypeError' do 
+        expect{{ foo: 'bar' }.in? 'foobar'}.to raise_error(TypeError)
+      end
+    end
+
+    context 'invalid parameter' do 
+      it 'raises an error' do 
+        expect{ '10'.in? 1000 }.to raise_error(ArgumentError)
+      end
+    end
+  end
+
   describe '#present? method' do 
     context 'when absent' do 
       context 'empty string' do 

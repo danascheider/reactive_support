@@ -68,6 +68,12 @@ module ReactiveSupport
   #     { foo: 10, bar: 18, baz: 32 }.try(:reject!) {|k,v| v < 25 } # => { baz: 32 }
   #     nil.try(:reject) {|k,v| v == 'foo' }                        # => nil
 
+  def in?(object)
+    object.include?(self)
+  rescue NoMethodError
+    raise ArgumentError.new("The parameter passed to #in? must respond to #include?")
+  end
+
   def try(method, *args, &block)
     begin
       block_given? ? self.send(method, *args, &block) : self.send(method, *args)
