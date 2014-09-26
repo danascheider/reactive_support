@@ -81,6 +81,24 @@ module ReactiveSupport
     raise ArgumentError.new("The parameter passed to #in? must respond to #include?")
   end
 
+  # The +#instance_values+ method returns a hash mapping all the calling object's
+  # instance variable names to the variables' values. The hash keys are the 
+  # variables' names, as strings, without the '@' prepended to them. Each of the
+  # hash's values is the value corresponding to the given variable name.
+  #
+  #     class Widget
+  #       def initialize(x,y)
+  #         @x, @y = x, y
+  #       end
+  #     end
+  #     
+  #     widget = Widget.new('foo', 'bar')
+  #     widget.instance_values              # => {'x' => 'foo', 'y' => 'bar'}
+
+  def instance_values
+    Hash[instance_variables.map {|name| [name[1..-1], instance_variable_get(name) ] }]
+  end
+
   # The +#try+ method calls the given +method+ (with given +*args+ and +&block+)
   # on the object calling it. The +#try+ method returns the output of the 
   # method or, if an error is raised, +nil+. It accepts an arbitrary number 

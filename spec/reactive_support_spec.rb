@@ -190,6 +190,30 @@ describe ReactiveSupport do
     end
   end
 
+  describe '#instance_values' do 
+    before(:each) do 
+      class C
+        def initialize(x,y)
+          @x, @y = x, y
+        end
+      end
+
+      @c = C.new('foo', 'bar')
+    end
+
+    it 'returns a hash' do 
+      expect(@c.instance_values).to be_a(Hash)
+    end
+
+    it 'uses instance variable names without @ as keys' do 
+      ['x', 'y'].each {|var| expect(@c.instance_values).to have_key(var) }
+    end
+
+    it 'returns variable values' do 
+      [['x', 'foo'], ['y','bar']].each {|(var, val)| expect(@c.instance_values[var]). to eql val }
+    end
+  end
+
   describe '#present? method' do 
     context 'when true' do 
       hash = {
