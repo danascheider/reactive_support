@@ -36,6 +36,11 @@ module ReactiveExtensions
   end
 end
 
+# Include ReactiveExtensions in Ruby's core Object class. 
+# See Ruby documentation for version 
+# 2.1.3[http://ruby-doc.org/core-2.1.3/Object.html],
+# 2.0.0[http://ruby-doc.org/core-2.1.3/Object.html], or 
+# 1.9.3[http://ruby-doc.org/core-2.0.0/Object.html].
 class Object
   include ReactiveExtensions
 end
