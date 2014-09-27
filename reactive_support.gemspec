@@ -25,6 +25,9 @@ Gem::Specification.new do |s|
     lib/reactive_support/core_ext/object/blank.rb 
     lib/reactive_support/core_ext/object/deep_dup.rb 
     lib/reactive_support/core_ext/object/duplicable.rb
+    lib/reactive_support/core_ext/object/exist.rb
+    lib/reactive_support/core_ext/object/inclusion.rb 
+    lib/reactive_support/core_ext/object/instance_variables.rb
     lib/reactive_support/extensions/reactive_extensions.rb
     reactive_support.gemspec
     spec/reactive_support_spec.rb

@@ -1,4 +1,15 @@
-# This file adds the +#deep_dup method to Ruby's core Array and Hash objects.
+class Object
+  
+  # The +#deep_dup+ method returns a duplicate of a duplicable object. If the 
+  # object calling +#deep_dup+ is not duplicable, the object itself is returned.
+  # +#deep_dup+ is overwritten in the Array and Hash classes (see +./object/deep_dup.rb+).
+  # In those classes, it duplicates the object recursively so the members of the
+  # enumerable can be manipulated without affecting the original object.
+
+  def deep_dup
+    duplicable? ? self.dup : self
+  end
+end
 
 class Array
 

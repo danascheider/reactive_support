@@ -1,5 +1,14 @@
-# This file adds the +#duplicable?+ method to the Ruby classes that are 
-# not duplicable. It should return false in all cases.
+class Object
+
+  # The +#duplicable?+ method checks whether an object may be safely duplicated.
+  # It returns true, unless the object calling it has its own method called 
+  # +#duplicable?+. The +#duplicable?+ method is defined for non-duplicable
+  # classes in +./object/duplicable.rb+.
+
+  def duplicable?
+    true
+  end
+end
 
 # Define +#duplicable?+ for all of the classes in the array.
 
