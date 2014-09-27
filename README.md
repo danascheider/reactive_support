@@ -3,13 +3,22 @@ The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
 be used in any kind of project and is not dependent on any frameworks, gemsets, etc.
 To add ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
-<pre><code>gem 'reactive_record', '~> 0.1.0', git: 'https://github.com/danascheider/reactive_record'</code></pre>
+<pre><code>gem 'reactive_support', '~> 0.1.2'</code></pre>
 To install locally:
-<pre><code>sudo gem install reactive_record</code></pre>
+<pre><code>sudo gem install reactive_support</code></pre>
 Or if you're using RVM: 
-<pre><code>gem install reactive_record</code></pre>
+<pre><code>gem install reactive_support</code></pre>
 Then, in your main project file, include:
 <pre><code>require 'reactive_support'</code></pre>
+
+You can also point your Gemfile to this repo:
+<pre><code>gem 'reactive_support', '~> 0.1.2', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
+
+If you would like to install an earlier version, you can specify that version's branch
+using the standard branch naming scheme:
+<pre><code>gem 'reactive_support', '~> 0.1.2', git: 'https://github.com/danascheider/reactive_support.git, branch: 'version-0.1.2'</code></pre>
+
+Please note that version 0.1.2 is the earliest available version of ReactiveSupport.
 
 ### Usage
 In its current version, ReactiveSupport adds methods to Ruby's `Object` class, so
@@ -56,12 +65,10 @@ contributions should not be taken to mean it has fallen off my radar.
 
 ##### Can I use ReactiveSupport in a Sinatra project/Puppet module/system utility/etc.?
 Yes. ReactiveSupport is agnostic to the characteristics of your app, and there is no
-reason it cannot be used in any app where you feel it is needed.
+reason it cannot be used in any app where you feel it will be useful.
 
 ##### What versions of Ruby are supported?
-ReactiveSupport version 0.1.0 supports Ruby versions >= 1.9.3. [Travis-CI](https://travis-ci.org/danascheider/reactive_support) is set up to run tests against the most recent version
-of JRuby as well (currently 1.7.16), but tests are currently failing and frankly, 
-I don't know JRuby well enough to fix them. Additional Rubies
+ReactiveSupport version 0.1 supports Ruby versions >= 1.9.3. Additional Rubies
 may be supported in the future. Adding such support would be a welcome contribution
 to the project.
 
@@ -90,3 +97,4 @@ full CONTRIBUTING.md file to ensure your pull request will be accepted as is:
   * Those interested in contributing to ReactiveSupport are encouraged read up on 
     [Travis CI](http://travis-ci.org), [Coveralls](http://coveralls.io), 
     [CodeClimate](http://codeclimate.com), and [Inch CI](http://inch-ci.org).
+  * Check out ReactiveSupport at [Rubygems.org](http://rubygems.org/gems/reactive_support)!
