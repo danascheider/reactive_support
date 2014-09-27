@@ -22,11 +22,13 @@ Gem::Specification.new do |s|
     README.md
     version.rb
     lib/reactive_support.rb
-    lib/object/blank.rb 
-    lib/object/deep_dup.rb 
-    lib/object/duplicable.rb
+    lib/reactive_support/core_ext/object/blank.rb 
+    lib/reactive_support/core_ext/object/deep_dup.rb 
+    lib/reactive_support/core_ext/object/duplicable.rb
+    lib/reactive_support/extensions/reactive_extensions.rb
     reactive_support.gemspec
     spec/reactive_support_spec.rb
+    spec/reactive_extensions_spec.rb
     spec/spec_helper.rb
   ]
   # = MANIFEST =
