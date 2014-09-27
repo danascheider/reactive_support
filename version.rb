@@ -6,8 +6,8 @@ module ReactiveSupport
   module Version
     MAJOR = '0'
     MINOR = '1'
-    PATCH = '1'
-    PRE   = 'beta'
+    PATCH = '2'
+    PRE   = nil
 
     STRING = [MAJOR, MINOR, PATCH, PRE].compact.join('.').chomp('.')
   end
