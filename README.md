@@ -31,7 +31,13 @@ Currently, ReactiveSupport's methods are a strict subset of ActiveSupport's. (Th
 change in future versions, or most saliently, if ActiveSupport's API changes.)
 That means that, while not all ActiveSupport methods are available, those that are can,
 as of September 2014, be found in ActiveSupport's API documentation with no functional
-differences. (This is true of ReactiveSupport 0.1.0 and ActiveSupport 4.1.6.)
+differences. (This is true of ReactiveSupport 0.1.x and ActiveSupport 4.1.6.)
+
+ReactiveSupport includes an extension module, ReactiveExtensions, that additional 
+methods in the spirit of, but not included in, ActiveSupport. This module needs to 
+be included separately; the default configuration is that only ActiveSupport methods 
+are added to your project. You can include ReactiveExtensions with a simple `require`:
+<pre><code>require 'reactive_support/extensions/reactive_extensions'</pre></code>
 
 ### FAQ
 ##### Why not just use ActiveSupport?
