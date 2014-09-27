@@ -1,4 +1,5 @@
 Dir['./lib/reactive_support/core_ext/object/**/*.rb'].each {|f| require f }
+Dir['./lib/reactive_support/core_ext/array/**/*.rb'].each {|f| require f }
 
 # The ReactiveSupport module implements methods from ActiveSupport. It can be
 # included in Ruby's +Object+ class by adding +require 'reactive_support'+ to

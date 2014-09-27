@@ -5,7 +5,7 @@ The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
 be used in any kind of project and is not dependent on any frameworks, gemsets, etc.
 To add ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
-<pre><code>gem 'reactive_support', '~> 0.1.2'</code></pre>
+<pre><code>gem 'reactive_support', '~> 0.1.3'</code></pre>
 To install locally:
 <pre><code>sudo gem install reactive_support</code></pre>
 Or if you're using RVM: 
@@ -14,7 +14,7 @@ Then, in your main project file, include:
 <pre><code>require 'reactive_support'</code></pre>
 
 You can also point your Gemfile to this repo:
-<pre><code>gem 'reactive_support', '~> 0.1.2', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
+<pre><code>gem 'reactive_support', '~> 0.1.3', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
 
 If you would like to install an earlier version, you can specify that version's branch
 using the standard branch naming scheme:
