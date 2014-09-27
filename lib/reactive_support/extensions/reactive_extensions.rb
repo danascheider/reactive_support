@@ -5,8 +5,8 @@ require 'reactive_support'
 # them in your project, you will need to put this in your main project file:
 #     require 'reactive_support/extensions'
 #
-# ReactiveExtensions includes ReactiveSupport, so you will need to remove any 
-# requires for ReactiveSupport as it will raise a SystemStackError.
+# ReactiveExtensions requires ReactiveSupport, so there is no need to require both
+# explicitly.
 
 module ReactiveExtensions
 
