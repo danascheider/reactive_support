@@ -10,6 +10,7 @@ SimpleCov.start if ENV["COVERAGE"]
 Coveralls.wear!
 
 require_relative '../lib/reactive_support'
+require_relative '../lib/reactive_support/core_ext/array/access'
 require_relative '../lib/reactive_support/extensions/reactive_extensions'
 
 RSpec.configure do |c|

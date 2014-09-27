@@ -1,4 +1,5 @@
 require File.expand_path('../version.rb', __FILE__)
+require File.expand_path('../files.rb', __FILE__)
 
 Gem::Specification.new do |s|
   s.specification_version = 1 if s.respond_to? :specification_version=
@@ -15,25 +16,7 @@ Gem::Specification.new do |s|
   s.email = "dana.scheider@gmail.com"
 
   # = MANIFEST =
-  s.files = %w[
-    Gemfile
-    LICENSE
-    CONTRIBUTING.md
-    README.md
-    version.rb
-    lib/reactive_support.rb
-    lib/reactive_support/core_ext/object/blank.rb 
-    lib/reactive_support/core_ext/object/deep_dup.rb 
-    lib/reactive_support/core_ext/object/duplicable.rb
-    lib/reactive_support/core_ext/object/exist.rb
-    lib/reactive_support/core_ext/object/inclusion.rb 
-    lib/reactive_support/core_ext/object/instance_variables.rb
-    lib/reactive_support/extensions/reactive_extensions.rb
-    reactive_support.gemspec
-    spec/reactive_support_spec.rb
-    spec/reactive_extensions_spec.rb
-    spec/spec_helper.rb
-  ]
+  s.files = ReactiveSupport.files
   # = MANIFEST =
 
   s.test_files = s.files.select {|path| path =~ /^spec\/.*.rb/ }
