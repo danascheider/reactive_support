@@ -40,6 +40,18 @@ Thank you for your contributions!
 I'll consider all contributions, but the following would be 
 particularly helpful.
 
+##### Issue Reports
+Issue reports need not adhere to the rest of the contributing guidelines.
+I welcome questions, problems, and feature requests (i.e., ActiveSupport
+functionality you'd like to see in this gem) and will respond promptly in
+most cases. When reporting a problem or bug, please include as much 
+information as possible, including the following:
+  * Version of ReactiveSupport and other tools in your project
+  * Version(s) of Ruby you're using or testing against
+  * Code samples and error messages you're getting
+  * What you have already tried
+  * Any additional information relevant to your particular problem
+
 ##### Bug fixes
 If you find a bug affecting ReactiveSupport's interaction with other gems,
 frameworks, tools, platforms, rubies, or environments, your issue report
