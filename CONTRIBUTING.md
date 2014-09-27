@@ -18,8 +18,7 @@ DO...
   * Include robust, passing RSpec examples with your PR
   * Include extensive [RDoc](https://github.com/rdoc/rdoc) comments
   * Keep your code DRY and concise - be mindful of best practices
-  * Familiarize yourself with the metrics used on this project
-  * Familiarize yourself with the vision and values of this project
+  * Familiarize yourself with the metrics, vision, and values of this project
   * Run the full test suite before making your PR
   * File an issue report or message me if you have any questions
     (I don't bite!)
@@ -29,10 +28,11 @@ DON'T...
   * Break backward compatibility
   * Modify existing functionality (unless required to fix a bug)
   * Add dependencies
-  * Add functionality that is not present in ActiveSupport
+  * Add functionality that is not present in ActiveSupport (except to the 
+    ReactiveExtensions module)
   * Submit a PR with breaking changes or no passing tests
   * Submit changes that only work with particular tools, gemsets, 
-    environments, or Ruby versions
+    environments, or with only a subset of supported Ruby versions.
 
 Thank you for your contributions!
 
@@ -160,3 +160,9 @@ Lots of things can be reduced to a single line, especially blocks and conditiona
 
     # Needs to be written like this:
     return foo.message rescue "It didn't work!"
+
+#### Contributing to ReactiveExtensions
+The ReactiveExtensions module is for useful methods that are not included in
+ActiveSupport, but are congruent with its spirit. I'll accept additions to 
+ReactiveExtensions as long as they will be useful to a broad audience and
+adhere to best practices and style/testing/documentation guidelines.
