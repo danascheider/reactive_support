@@ -20,7 +20,7 @@ If you would like to install an earlier version, you can specify that version's 
 using the standard branch naming scheme:
 <pre><code>gem 'reactive_support', '~> 0.1.2', git: 'https://github.com/danascheider/reactive_support.git, branch: 'version-0.1.2'</code></pre>
 
-Please note that version 0.1.2 is the earliest available version of ReactiveSupport.
+Please note that version 0.1.2 is the earliest available version of ReactiveSupport, and is currently the only release labeled production ready.
 
 ### Usage
 In its current version, ReactiveSupport adds methods to Ruby's `Object` class, so
