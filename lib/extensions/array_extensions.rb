@@ -1,7 +1,7 @@
 class Array
   
   # The +#scope+ method is called on an array of hashes. It returns a sub-array
-  # including only hashes for which the value at a given +key+ equals the given +value+.
+  # including only hashes for which the value at a given +key+ is among the given +values+.
   # The +#scope+ method is non-destructive; the original array will remain intact
   # after it is called. The +#scope+ method is known to work for string or symbol
   # keys. It should work for other data type keys as well.
@@ -25,8 +25,8 @@ class Array
   end
 
   # The +#where_not+ method is called on an array of hashes. It returns a sub-array
-  # including only hashes for which the value at a given +key+ does not equal the
-  # given value. It is the inverse of the +#scope+ method. The +#where_not+ method 
+  # including only hashes for which the value at a given +key+ is not among the
+  # given +values+. It is the inverse of the +#scope+ method. The +#where_not+ method 
   # is non-destructive; the original array will remain intact after it is called. The
   # +#where_not+ method is known to work for string or symbol keys. It should work for
   # other data types as well.
