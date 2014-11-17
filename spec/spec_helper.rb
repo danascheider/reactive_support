@@ -10,7 +10,7 @@ SimpleCov.start if ENV["COVERAGE"]
 Coveralls.wear!
 
 require_relative '../lib/reactive_support'
-require_relative '../lib/reactive_support/extensions/reactive_extensions'
+Dir['./lib/extensions/**/*.rb'].each {|f| require f }
 
 RSpec.configure do |c|
   c.order  = 'random'
