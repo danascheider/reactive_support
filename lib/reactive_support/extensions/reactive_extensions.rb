@@ -1,4 +1,4 @@
-require 'reactive_support'
+require File.expand_path('../../../reactive_support.rb', __FILE__)
 
 # The ReactiveExtensions module consists of methods I wish ActiveSupport provided.
 # These methods do not adhere to the ActiveSupport API. If you wish to include
