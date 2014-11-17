@@ -5,10 +5,11 @@ require 'reactive_support'
 # them in your project, you will need to put this in your main project file:
 #     require 'reactive_support/extensions'
 #
-# ReactiveExtensions requires ReactiveSupport, so there is no need to require both
-# explicitly.
+# ReactiveExtensions includes ReactiveSupport, so you will need to remove any 
+# requires for ReactiveSupport as it will raise a SystemStackError.
 
 module ReactiveExtensions
+  Dir['./**/*.rb'].each {|f| require f }
 
   # The +#try_rescue+ method extends ReactiveSupport's +#try+ method so it
   # rescues NoMethodErrors and TypeErrors as well as returning +nil+ when
@@ -36,11 +37,6 @@ module ReactiveExtensions
   end
 end
 
-# Include ReactiveExtensions in Ruby's core Object class. 
-# See Ruby documentation for version 
-# 2.1.3[http://ruby-doc.org/core-2.1.3/Object.html],
-# 2.0.0[http://ruby-doc.org/core-2.1.3/Object.html], or 
-# 1.9.3[http://ruby-doc.org/core-2.0.0/Object.html].
 class Object
   include ReactiveExtensions
 end
