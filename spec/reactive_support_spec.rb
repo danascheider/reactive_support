@@ -24,7 +24,8 @@ describe ReactiveSupport do
         'non-blank object'              => 'foo',
         'TrueClass'                     => true,
         'enumerable with blank members' => [nil, false],
-        'numeric'                       => 10
+        'numeric'                       => 10,
+        'something else'                => Time.now
       }
 
       hash.each do |k,v|
@@ -244,7 +245,8 @@ describe ReactiveSupport do
         'non-empty object'              => ['foo'],
         'TrueClass'                     => true, 
         'enumerable with blank members' => [nil, false],
-        'numeric'                       => 8.2
+        'numeric'                       => 8.2,
+        'something else'                => Time.now
       }
 
       hash.each do |k,v|

@@ -7,6 +7,29 @@
 # 2.0.0[http://ruby-doc.org/core-2.1.3/String.html], or 
 # 1.9.3[http://ruby-doc.org/core-2.0.0/String.html].
 
+class Object
+
+  # When called on a generic object, the +#blank?+ method returns +true+ if 
+  # the object is false, empty, or nil. Other objects return +false+.
+  # For specific examples of different classes, see the class-specific 
+  # definitions of +#blank?+.
+  #     Time.now.blank?  # => false
+
+  def blank?
+    respond_to?(:empty) ? !!empty : !self
+  end
+
+  # When called on a generic object, the +#present?+ method returns +true+ if
+  # the object is present and not empty. If the object is false, empty, or nil,
+  # +#present?+ returns +false+. For specific examples of different classes, see
+  # the class-specific definitions of +#present?+.
+  #     Time.now.present?  # => true
+
+  def present? 
+    !blank?
+  end
+end
+
 class String
 
   # When called on a string, the +#blank?+ method returns +true+ if the string
