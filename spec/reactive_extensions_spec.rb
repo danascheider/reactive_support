@@ -21,28 +21,120 @@ describe ReactiveExtensions do
     end
   end
 
-  describe 'array #scope method' do 
-    context 'symbol keys' do 
-      let(:sartre) { { name: 'Jean-Paul Sartre', nationality: 'French' } }
-      let(:russell) { { name: 'Bertrand Russell', nationality: 'English' } }
-      let(:wittgenstein) { { name: 'Ludwig Wittgenstein', nationality: 'Austrian' } }
-      let(:camus) { { name: 'Albert Camus', nationality: 'French' } }
-      let(:array) { [sartre, russell, wittgenstein, camus] }
+  describe 'array methods' do 
+    let(:sartre) { { 'name' => 'Jean-Paul Sartre', 'nationality' => 'French' } }
+    let(:russell) { { 'name' => 'Bertrand Russell', 'nationality' => 'English' } }
+    let(:wittgenstein) { { 'name' => 'Ludwig Wittgenstein', 'nationality' => 'Austrian' } }
+    let(:camus) { { 'name' => 'Albert Camus', 'nationality' => 'French' } }
+    let(:array) { [sartre, russell, wittgenstein, camus] }
 
-      it 'returns scoped hashes' do 
-        expect(array.scope(:nationality, 'French')).to eql([sartre, camus])
+    describe 'array #scope method' do 
+      context 'symbol keys' do
+        context 'single value' do 
+          it 'returns scoped hashes' do 
+            array.each {|hash| hash.symbolize_keys! }
+            expect(array.scope(:nationality, 'French')).to eql([sartre, camus])
+          end
+        end
+
+        context 'multiple values' do 
+          it 'returns scoped hashes' do 
+            array.each {|hash| hash.symbolize_keys! }
+            expect(array.scope(:nationality, 'French', 'English')).to eql([sartre, russell, camus])
+          end
+        end
+      end
+
+      context 'string keys' do
+        context 'single value' do 
+          it 'returns scoped hashes' do 
+            expect(array.scope('nationality', 'French')).to eql([sartre, camus])
+          end
+        end
+
+        context 'multiple values' do 
+          it 'returns scoped hashes' do 
+            expect(array.scope('nationality', 'French', 'English')).to eql([sartre, russell, camus])
+          end
+        end
       end
     end
 
-    context 'string keys' do
-      let(:sartre) { {'name' => 'Jean-Paul Sartre', 'nationality' => 'French' } }
-      let(:russell) { { 'name' => 'Bertrand Russell', 'nationality' => 'English' } }
-      let(:wittgenstein) { { 'name' => 'Ludwig Wittgenstein', 'nationality' => 'Austrian' } }
-      let(:camus) { { 'name' => 'Albert Camus', 'nationality' => 'French' } }
-      let(:array) { [sartre, russell, wittgenstein, camus] }
+    describe 'array #where_not method' do 
+      context 'symbol keys' do 
+        context 'single value' do 
+          it 'returns scoped hashes' do 
+            array.each {|hash| hash.symbolize_keys! }
+            expect(array.where_not(:nationality, 'French')).to eql([russell, wittgenstein])
+          end
+        end
 
-      it 'returns scoped hashes' do 
-        expect(array.scope('nationality', 'French')).to eql([sartre, camus])
+        context 'multiple values' do 
+          it 'returns scoped hashes' do 
+            array.each {|hash| hash.symbolize_keys! }
+            expect(array.where_not(:nationality, 'French', 'English')).to eql([wittgenstein])
+          end
+        end
+      end
+
+      context 'string keys' do
+        context 'single value' do 
+          it 'returns scoped hashes' do 
+            expect(array.where_not('nationality', 'French')).to eql([russell, wittgenstein])
+          end
+        end
+
+        context 'multiple values' do 
+          it 'returns scoped hashes' do 
+            expect(array.where_not('nationality', 'French', 'English')).to eql([wittgenstein])
+          end
+        end
+      end
+    end
+  end
+
+  describe 'hash methods' do 
+    describe 'symbolize_keys' do 
+      it 'turns string keys into symbols' do 
+        expect({'foo' => 'bar'}.symbolize_keys).to eql({:foo => 'bar'})
+      end
+
+      it 'maintains the original hash' do 
+        hash = { 'foo' => 'bar' }
+        expect { hash.symbolize_keys }.not_to change(hash, :keys)
+      end
+    end
+
+    describe 'symbolize_keys!' do 
+      it 'turns string keys into symbols' do 
+        expect({'foo' => 'bar'}.symbolize_keys!).to eql({:foo => 'bar'})
+      end
+
+      it 'overwrites the original hash' do
+        hash = { 'foo' => 'bar' }
+        expect { hash.symbolize_keys! }.to change(hash, :keys)
+      end
+    end
+
+    describe 'stringify_keys' do 
+      it 'turns symbol keys into strings' do 
+        expect({foo: 'bar'}.stringify_keys).to eql({'foo' => 'bar'})
+      end
+
+      it 'maintains the original hash' do 
+        hash = { foo: 'bar' }
+        expect { hash.stringify_keys }.not_to change(hash, :keys)
+      end
+    end
+
+    describe 'stringify_keys!' do 
+      it 'turns symbol keys into strings' do 
+        expect({foo: 'bar'}.stringify_keys!).to eql({'foo' => 'bar'})
+      end
+
+      it 'overwrites the original hash' do
+        hash = { foo: 'bar' }
+        expect { hash.stringify_keys! }.to change(hash, :keys)
       end
     end
   end
