@@ -1,5 +1,3 @@
-require File.expand_path('../../../reactive_support.rb', __FILE__)
-
 # The ReactiveExtensions module consists of methods I wish ActiveSupport provided.
 # These methods do not adhere to the ActiveSupport API. If you wish to include
 # them in your project, you will need to put this in your main project file:
@@ -9,7 +7,6 @@ require File.expand_path('../../../reactive_support.rb', __FILE__)
 # requires for ReactiveSupport as it will raise a SystemStackError.
 
 module ReactiveExtensions
-  Dir['./**/*.rb'].each {|f| require f }
 
   # The +#try_rescue+ method extends ReactiveSupport's +#try+ method so it
   # rescues NoMethodErrors and TypeErrors as well as returning +nil+ when

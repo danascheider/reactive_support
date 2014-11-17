@@ -9,8 +9,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start if ENV["COVERAGE"]
 Coveralls.wear!
 
-# ReactiveExtensions requires ReactiveSupport, but not vice versa
-require File.expand_path('../../lib/reactive_support/extensions/reactive_extensions', __FILE__)
+require File.expand_path('../../lib/reactive_support.rb', __FILE__)
 
 RSpec.configure do |c|
   c.order  = 'random'
