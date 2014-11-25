@@ -2,10 +2,10 @@
 # The +#blank?+ method returns +true+ if the object is undefined, blank, false,
 # empty, or nil. The +#present?+ method returns the opposite of +#blank?+
 
-# Ruby's core String class. See documentation for version 
-# 2.1.3[http://ruby-doc.org/core-2.1.3/String.html],
-# 2.0.0[http://ruby-doc.org/core-2.1.3/String.html], or 
-# 1.9.3[http://ruby-doc.org/core-2.0.0/String.html].
+# Ruby's core Object class. See documentation for version 
+# 2.1.5[http://ruby-doc.org/core-2.1.5/Object.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/Object.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/Object.html].
 
 class Object
 
@@ -29,6 +29,11 @@ class Object
     !blank?
   end
 end
+
+# Ruby's core String class. See documentation for version 
+# 2.1.5[http://ruby-doc.org/core-2.1.5/String.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/String.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/String.html].
 
 class String
 
@@ -54,9 +59,9 @@ class String
 end
 
 # Ruby's core Array class. See documentation for version 
-# 2.1.3[http://ruby-doc.org/core-2.1.3/FalseClass.html],
-# 2.0.0[http://ruby-doc.org/core-2.0.0/FalseClass.html], or 
-# 1.9.3[http://ruby-doc.org/core-1.9.3/FalseClass.html].
+# 2.1.5[http://ruby-doc.org/core-2.1.3/Array.html],
+# 2.0.0[http://ruby-doc.org/core-2.0.0/Array.html], or 
+# 1.9.3[http://ruby-doc.org/core-1.9.3/Array.html].
 
 class Array
 
@@ -82,7 +87,7 @@ class Array
 end
 
 # Ruby's core Hash class. See documentation for version 
-# 2.1.3[http://ruby-doc.org/core-2.1.3/Hash.html],
+# 2.1.5[http://ruby-doc.org/core-2.1.5/Hash.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/Hash.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/Hash.html].
 
@@ -108,7 +113,7 @@ class Hash
 end
 
 # Ruby's core NilClass (the singleton class consisting of the +nil+ object). 
-# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/NilClass.html],
+# See documentation for version 2.1.5[http://ruby-doc.org/core-2.1.5/NilClass.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/NilClass.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/NilClass.html].
 
@@ -138,7 +143,7 @@ class NilClass
 end
 
 # Ruby's core TrueClass (the singleton class consisting of the +true+ object).
-# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/TrueClass.html],
+# See documentation for version 2.1.5[http://ruby-doc.org/core-2.1.5/TrueClass.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/TrueClass.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/TrueClass.html].
 
@@ -162,7 +167,7 @@ class TrueClass
 end
 
 # Ruby's core FalseClass (the singleton class consisting of the +false+ object).
-# See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/FalseClass.html],
+# See documentation for version 2.1.5[http://ruby-doc.org/core-2.1.5/FalseClass.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/FalseClass.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/FalseClass.html].
 
@@ -186,7 +191,7 @@ class FalseClass
 end
 
 # Ruby's core Numeric class, the parent class of Integer, Fixnum, Bignum, Float,
-# and Rational. See documentation for version 2.1.3[http://ruby-doc.org/core-2.1.3/Numeric.html],
+# and Rational. See documentation for version 2.1.5[http://ruby-doc.org/core-2.1.5/Numeric.html],
 # 2.0.0[http://ruby-doc.org/core-2.0.0/Numeric.html], or 
 # 1.9.3[http://ruby-doc.org/core-1.9.3/Numeric.html].
 
