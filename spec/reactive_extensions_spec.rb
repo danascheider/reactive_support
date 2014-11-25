@@ -138,4 +138,22 @@ describe ReactiveExtensions do
       end
     end
   end
+
+  describe 'proc methods' do 
+    describe 'raises_error?' do
+      let(:proc) { Proc.new {|quotient| 1.quo(quotient) } }
+
+      context 'when an error is raised' do 
+        it 'returns true' do 
+          expect(proc.raises_error?(0)).to be true
+        end
+      end
+
+      context 'when no error is raised' do 
+        it 'returns false' do 
+          expect(proc.raises_error?(2)).to be false
+        end
+      end
+    end
+  end
 end
