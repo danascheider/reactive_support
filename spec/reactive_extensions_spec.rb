@@ -137,6 +137,40 @@ describe ReactiveExtensions do
         expect { hash.stringify_keys! }.to change(hash, :keys)
       end
     end
+
+    describe 'clean' do 
+      context 'when no cleaning is needed' do 
+        it 'returns the original hash' do 
+          expect({:foo => 'bar'}.clean(:baz)). to eql({:foo => 'bar'})
+        end
+
+        it 'doesn\'t raise an error' do 
+          expect{ {:foo => 'bar'}.clean(:baz) }.not_to raise_error
+        end
+      end
+
+      context 'when there are some keys to clean' do 
+        it 'removes specified keys' do 
+          expect({:foo => 'bar', :baz => 'qux'}.clean(:baz)).to eql({:foo => 'bar'})
+        end
+
+        it 'doesn\'t change the original hash' do 
+          hash = {:foo => 'bar', :baz => 'qux', 'norf' => 'raboof'}
+          expect{ hash.clean(:baz, 'norf') }.not_to change(hash, :keys)
+        end
+      end
+
+      context 'when all keys must be cleaned' do 
+        it 'returns an empty hash' do 
+          expect({:foo => 'bar'}.clean(:foo)).to eql({})
+        end
+
+        it 'doesn\'t change the original hash' do 
+          hash = {:foo => 'bar'}
+          expect{ hash.clean(:foo) }.not_to change(hash, :keys)
+        end
+      end
+    end
   end
 
   describe 'proc methods' do 
