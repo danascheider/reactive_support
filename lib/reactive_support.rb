@@ -8,6 +8,7 @@ Dir['./lib/reactive_support/extensions/**/*.rb'].each {|f| require f }
 # 
 # In this example, ReactiveSupport's #try method is called on an array:
 #     require 'reactive_support'
+#     require 'reactive_support/core_ext/array/try'
 #     
 #     arr = %w(foo, bar, baz)
 #     arr.try(:join, '.') 
