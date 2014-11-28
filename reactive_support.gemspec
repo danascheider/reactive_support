@@ -21,7 +21,13 @@ Gem::Specification.new do |s|
   s.require_paths             = %w[ lib 
                                     lib/reactive_support 
                                     lib/reactive_support/core_ext
+                                    lib/reactive_support/core_ext/array
+                                    lib/reactive_support/core_ext/object
                                     lib/reactive_support/extensions
+                                    lib/reactive_support/extensions/array
+                                    lib/reactive_support/extensions/hash
+                                    lib/reactive_support/extensions/object
+                                    lib/reactive_support/extensions/proc
                                   ]
   # = MANIFEST =
 

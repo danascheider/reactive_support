@@ -7,7 +7,7 @@ module ReactiveSupport
     MAJOR = '0'
     MINOR = '4'
     PATCH = '0'
-    PRE   = 'beta5'
+    PRE   = 'beta6'
 
     STRING = [MAJOR, MINOR, PATCH, PRE].compact.join('.').chomp('.')
   end
