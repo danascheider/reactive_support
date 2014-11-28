@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReactiveExtensions do 
+describe 'ReactiveExtensions' do 
   describe '#try_rescue method' do 
     context 'when self is nil' do 
       it 'returns nil' do 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    reactive_support (0.4.0.beta2)
+    reactive_support (0.4.0.beta4)
 
 GEM
   remote: https://rubygems.org/

@@ -1,0 +1,1 @@
+Dir['./lib/reactive_support/core_ext/object/*.rb'].each {|f| require f }
