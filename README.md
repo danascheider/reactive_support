@@ -5,14 +5,14 @@ The ReactiveSupport gem provides a re-implementation of certain [ActiveSupport](
 methods, allowing them to be used outside of the Rails ecosystem. This gem can 
 be used in any kind of project and is not dependent on any frameworks, gemsets, etc.
 To add ReactiveSupport to your project, add this to your Gemfile and run `bundle install`:
-<pre><code>gem 'reactive_support', '~> 0.3.0'</code></pre>
+<pre><code>gem 'reactive_support', '~> 0.4.0'</code></pre>
 To install locally:
 <pre><code>sudo gem install reactive_support</code></pre>
 Or if you're using RVM: 
 <pre><code>gem install reactive_support</code></pre>
 
 You can also point your Gemfile to this repo:
-<pre><code>gem 'reactive_support', '~> 0.3.0.beta', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
+<pre><code>gem 'reactive_support', '~> 0.4.0.beta', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
 
 Like ActiveSupport, ReactiveSupport is designed to load only the code you are actually
 using in your app. For that reason, you will need to specify in your project files
@@ -21,16 +21,15 @@ exactly what you're using. For example, in Canto, I have the following requires:
 require 'reactive_support/core_ext/object/blank'
 require 'reactive_support/core_ext/object/inclusion'
 require 'reactive_support/core_ext/object/try'
-require 'reactive_support/extensions/reactive_extensions'
-require 'reactive_support/extensions/array_extensions'</code></pre>
-I do have plans to add the ability to require the entire gem, or broader parts of it, in the future. This would also be a welcome contribution to the project if you're interested.
+require 'reactive_support/extensions/reactive_extensions'</code></pre>
+The ReactiveExtensions module should be required as a whole. I do have plans to add the ability to require the entire gem, or broader parts of it, in the future. This would also be a welcome contribution to the project if you're interested.
 
 Please note that version 0.1.2 is the earliest available version of ReactiveSupport.
 
 ### Usage
-In its current version, ReactiveSupport adds methods to Ruby's `Object` class, so
-once required, its methods can be used on any object within your project, including
-core Ruby classes.
+In its current version, ReactiveSupport adds methods to several core Ruby classes
+(including `Object`), so once required, its methods can be used on any object within 
+your project.
 
 Currently, ReactiveSupport's methods are a strict subset of ActiveSupport's. (This may 
 change in future versions, or most saliently, if ActiveSupport's API changes.)
@@ -38,7 +37,7 @@ That means that, while not all ActiveSupport methods are available, those that a
 as of September 2014, be found in ActiveSupport's API documentation with no functional
 differences. (This is true of ReactiveSupport 0.1.x and ActiveSupport 4.1.6.)
 
-ReactiveSupport includes an extension module, ReactiveExtensions, that additional 
+ReactiveSupport includes an extension module, ReactiveExtensions, that houses additional 
 methods in the spirit of, but not included in, ActiveSupport. This module needs to 
 be included separately; the default configuration is that only ActiveSupport methods 
 are added to your project. You can include ReactiveExtensions with a simple `require`:
