@@ -1,4 +1,3 @@
-Dir['./lib/reactive_support/extensions/*.rb'].each {|f| require f }
 
 # The ReactiveExtensions module consists of methods I wish ActiveSupport provided.
 # These methods do not adhere to the ActiveSupport API. If you wish to include
@@ -9,4 +8,5 @@ Dir['./lib/reactive_support/extensions/*.rb'].each {|f| require f }
 # requires for ReactiveSupport as it will raise a SystemStackError.
 
 module ReactiveExtensions
+  Dir['./lib/reactive_support/extensions/*.rb'].each {|f| require f }
 end
