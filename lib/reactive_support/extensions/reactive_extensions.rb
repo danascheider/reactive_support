@@ -7,6 +7,7 @@
 # requires for ReactiveSupport as it will raise a SystemStackError.
 
 module ReactiveExtensions
+  Dir['./lib/reactive_support/extensions/*'].each {|f| require f }
 
   # The +#try_rescue+ method extends ReactiveSupport's +#try+ method so it
   # rescues NoMethodErrors and TypeErrors as well as returning +nil+ when
