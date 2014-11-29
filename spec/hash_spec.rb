@@ -14,9 +14,8 @@ describe Hash do
     end
 
     context 'no block given' do 
-      it 'returns an enum' do 
-        transformed = hash.transform_keys
-        expect(transformed).to be_an(Enumerable)
+      it 'returns an enumerator' do 
+        expect(hash.transform_keys).to be_an(Enumerator)
       end
     end
   end
@@ -33,8 +32,7 @@ describe Hash do
 
     context 'no block given' do 
       it 'returns an enum' do 
-        transformed = hash.transform_keys!
-        expect(transformed).to be_an(Enumerable)
+        expect(hash.transform_keys!).to be_an(Enumerator)
       end
     end
   end
