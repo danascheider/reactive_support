@@ -1,3 +1,5 @@
+require 'reactive_support/core_ext/object/duplicable'
+
 # Ruby's core Object class. See documentation for version 
 # 2.1.3[http://ruby-doc.org/core-2.1.3/Object.html],
 # 2.0.0[http://ruby-doc.org/core-2.1.3/Object.html], or 

@@ -18,17 +18,7 @@ Gem::Specification.new do |s|
 
   # = MANIFEST =
   s.files                     = ReactiveSupport.files
-  s.require_paths             = %w[ lib 
-                                    lib/reactive_support 
-                                    lib/reactive_support/core_ext
-                                    lib/reactive_support/core_ext/array
-                                    lib/reactive_support/core_ext/object
-                                    lib/reactive_support/extensions
-                                    lib/reactive_support/extensions/array
-                                    lib/reactive_support/extensions/hash
-                                    lib/reactive_support/extensions/object
-                                    lib/reactive_support/extensions/proc
-                                  ]
+  s.require_paths             = ['lib']
   # = MANIFEST =
 
   s.test_files                = s.files.select {|path| path =~ /^spec\/.*.rb/ }
