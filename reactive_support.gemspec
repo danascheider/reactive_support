@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
 
   s.name                      = 'reactive_support'
   s.version                   = ReactiveSupport.gem_version
-  s.date                      = '2014-11-27'
+  s.date                      = '2014-11-28'
 
   s.description = "ActiveSupport methods re-implemented independently of the Rails ecosystem"
   s.summary     = "ReactiveSupport provides useful ActiveSupport methods in a gem that is simple, stable, agnostic, and transparent."
