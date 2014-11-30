@@ -1,4 +1,6 @@
 require 'spec_helper' 
+require 'reactive_support/core_ext/hash/keys'
+require 'reactive_support/core_ext/array/extract_options'
 
 describe Array do 
   describe 'extract_options!' do 

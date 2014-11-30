@@ -19,7 +19,7 @@ using in your app. For that reason, you will need to specify in your project fil
 exactly what you're using. For example, in Canto, I have the following requires:
 <pre><code>require 'reactive_support/core_ext/object/blank'
 require 'reactive_support/core_ext/object/inclusion'
-require 'reactive_support/core_ext/object/try'
+require 'reactive_support/core_ext/object/try'</code></pre>
 I do have plans to add the ability to require the entire gem, or broader parts of it, in the future. This would also be a welcome contribution to the project if you're interested.
 
 Please note that version 0.1.2 is the earliest available version of ReactiveSupport.
