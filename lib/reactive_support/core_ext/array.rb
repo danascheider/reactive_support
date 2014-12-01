@@ -1,1 +1,2 @@
-Dir['./lib/reactive_support/core_ext/array/*.rb'].each {|f| require f }
+require_relative './array/access'
+require_relative './array/extract_options'
