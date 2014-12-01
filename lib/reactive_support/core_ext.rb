@@ -1,1 +1,3 @@
-Dir['./lib/reactive_support/core_ext/**/*.rb'].each {|f| require f }
+require_relative './core_ext/array'
+require_relative './core_ext/hash'
+require_relative './core_ext/object'

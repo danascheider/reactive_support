@@ -1,1 +1,1 @@
-Dir['./lib/reactive_support/core_ext/hash/*.rb'].each {|f| require f }
+require_relative './hash/keys'
