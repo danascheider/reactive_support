@@ -1,3 +1,4 @@
+require_relative './object/acts_like'
 require_relative './object/blank'
 require_relative './object/deep_dup'
 require_relative './object/duplicable'

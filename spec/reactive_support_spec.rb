@@ -1,6 +1,33 @@
 require 'spec_helper'
 
 describe ReactiveSupport do 
+  describe '#acts_like? method' do 
+    context 'when true' do 
+      it 'returns true' do 
+        class String
+          def acts_like_string?
+            true
+          end
+        end
+
+        expect("foo".acts_like?(:string)).to be true
+      end
+    end
+
+    context 'when false' do 
+      it 'returns false' do 
+        expect(18.acts_like?(:string)).to be false
+      end
+    end
+
+    context 'when undefined' do 
+      it 'returns false' do 
+        # The Integer class does not define an #acts_like_integer? method
+        expect(18.acts_like?(:integer)).to be false
+      end
+    end
+  end
+
   describe '#blank? method' do 
     context 'when true' do 
       hash = {

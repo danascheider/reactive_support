@@ -1,6 +1,12 @@
 require 'spec_helper' 
 
 describe Array do 
+  describe 'append' do 
+    it 'adds the item to the end of the array' do 
+      expect([1, 2, 3].append(4)).to eql([1, 2, 3, 4])
+    end
+  end
+
   describe 'extract_options!' do 
     context 'when there are options' do 
       let(:array) { ['a', 'b', :foo => :bar] }
@@ -52,6 +58,12 @@ describe Array do
       it 'returns an empty array' do 
         expect([1, 2, 3].from(-4)).to eql []
       end
+    end
+  end
+
+  describe 'prepend' do 
+    it 'adds the item to the front of the array' do 
+      expect([1, 2, 3].prepend(0)).to eql([0, 1, 2, 3])
     end
   end
 
