@@ -301,6 +301,45 @@ describe ReactiveSupport do
     end
   end
 
+  describe '#to_param method' do 
+    context 'when NilClass' do 
+      it 'returns nil' do 
+        expect(nil.to_param).to be nil
+      end
+    end
+
+    context 'when TrueClass' do 
+      it 'returns true' do 
+        expect(true.to_param).to be true 
+      end
+    end
+
+    context 'when FalseClass' do 
+      it 'returns false' do 
+        expect(false.to_param).to be false
+      end
+    end
+
+    context 'when not TrueClass, FalseClass, NilClass, or enumerable' do 
+      it 'returns the object as a string' do 
+        expect(1.to_param).to eql('1')
+      end
+    end
+
+    context 'when Array' do 
+      it 'returns an array separated by slashes' do 
+        expect(['foo', 12, 'bar'].to_param).to eql 'foo/12/bar'
+      end
+    end
+
+    context 'when Hash' do 
+      it 'is an alias of #to_query' do 
+        pending('implementation of #to_query')
+        expect({:foo => 'bar', :baz => 12}.to_param).to eql({:foo => 'bar', :baz => 12}.to_query)
+      end
+    end
+  end
+
   describe '#try method' do 
     context 'NilClass' do 
       it 'returns nil' do 
