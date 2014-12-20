@@ -334,8 +334,51 @@ describe ReactiveSupport do
 
     context 'when Hash' do 
       it 'is an alias of #to_query' do 
-        pending('implementation of #to_query')
         expect({:foo => 'bar', :baz => 12}.to_param).to eql({:foo => 'bar', :baz => 12}.to_query)
+      end
+    end
+  end
+
+  describe '#to_query method' do 
+    context 'general' do 
+      it 'generates a query string' do 
+        expect(1.to_query('age')).to eql("age=1")
+      end
+    end
+
+    context 'array' do 
+      context 'empty' do 
+        it 'returns an empty param' do 
+          expect([].to_query('foo')).to eql('foo%5B%5D=')
+        end
+      end
+
+      context 'not empty' do 
+        it 'returns a valid query string' do 
+          arr = ['foo', 'bar', 'baz']
+          expect(arr.to_query('qux')).to eql("qux%5B%5D=foo&qux%5B%5D=bar&qux%5B%5D=baz")
+        end
+      end
+
+      context 'hash' do 
+        context 'empty' do 
+          it 'returns an empty string' do 
+            expect({}.to_query).to eql ''
+          end
+        end
+
+        context 'no key given' do 
+          it 'returns the hash as a query string' do 
+            expect({:foo => 'bar', :baz => 'qux'}.to_query).to eql("baz=qux&foo=bar")
+          end
+        end
+
+        context 'key given' do 
+          it 'returns the hash as a parameter to the given query string key' do 
+            hash = {:foo => 'bar', :baz => 'qux'}
+            expect(hash.to_query('norf')).to eql "norf%5Bbaz%5D=qux&norf%5Bfoo%5D=bar"
+          end
+        end
       end
     end
   end
