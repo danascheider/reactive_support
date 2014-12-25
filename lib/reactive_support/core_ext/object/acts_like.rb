@@ -3,9 +3,8 @@ class Object
   # The +#acts_like?+ method checks whether the class of the calling object
   # has implemented an +#acts_like_<class>?+ method, returning true if it has.
   # In general, it is up to you to implement that method. ActiveSupport has 
-  # +#acts_like_<class>?+ methods implemented for certain classes, including
-  # +Time+; currently, those parts of ActiveSupport have not been incorporated
-  # into ReactiveSupport.
+  # +#acts_like_<class>?+ methods implemented for certain classes; currently,
+  # the only such method included in ReactiveSupport is +Time#acts_like_time?+.
   #
   # Examples:
   #     class String
