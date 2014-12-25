@@ -1,5 +1,6 @@
 class Object
-  # The +#try+ method calls a given (with given +*args+ and +&block+)
+  
+  # The +#try+ method calls a given method (with given +*args+ and +&block+)
   # on the object calling it. If the receiving object is +nil+, then the +#try+ 
   # method returns +nil+; otherwise, +#try+ returns the output of the method 
   # passed to it, or any error raised when the method is called. 
