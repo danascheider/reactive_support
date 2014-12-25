@@ -15,12 +15,15 @@ You can also point your Gemfile to this repo:
 <pre><code>gem 'reactive_support', '~> 0.5.0.beta', git: 'https://github.com/danascheider/reactive_support.git</code></pre>
 
 Like ActiveSupport, ReactiveSupport is designed to load only the code you are actually
-using in your app. For that reason, you will need to specify in your project files
-exactly what you're using. For example, in Canto, I have the following requires:
+using in your app. You can specify in your project files
+exactly what you're using. For example, you could have the following requires:
 <pre><code>require 'reactive_support/core_ext/object/blank'
 require 'reactive_support/core_ext/object/inclusion'
-require 'reactive_support/core_ext/object/try'</code></pre>
-I do have plans to add the ability to require the entire gem, or broader parts of it, in the future. This would also be a welcome contribution to the project if you're interested.
+require 'reactive_support/core_ext/array/access'</code></pre>
+
+To require all of ReactiveSupport, you can simply use<pre><code>require 'reactive_support'</code></pre>Or, you can require certain parts:
+<pre><code>require 'reactive_support/core_ext' # Requires all core extension modules
+require 'reactive_support/core_ext/array' # Requires core extensions for the Array class</code></pre>
 
 Please note that version 0.1.2 is the earliest available version of ReactiveSupport.
 
